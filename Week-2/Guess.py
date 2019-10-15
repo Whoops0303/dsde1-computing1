@@ -3,3 +3,4 @@ guess = int(input())
 import random
 ans = random.randint(1,11)
 print(guess==ans)
+#comment
