@@ -13,3 +13,4 @@ def period(L,g):
     except NameError:
         print("Please enter a number")
         return "Like 1,2,3"
+
