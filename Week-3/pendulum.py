@@ -5,12 +5,9 @@ def period(L,g):
         T = math.pi*2*(L/g)**0.5
         return T
     except ZeroDivisionError:
-        print("You can't divide by zero bruh")
-        return "Undefined"
+        raise ZeroDivisionError("You can't divide by zero bruh")
     except TypeError:
-        print("Please enter a number")
-        return "Like 1,2,3"
+        raise TypeError("Please enter a number")
     except NameError:
-        print("Please enter a number")
-        return "Like 1,2,3"
+        raise NameError("Please enter a number")
 
