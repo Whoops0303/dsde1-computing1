@@ -9,7 +9,10 @@ Simple functions performing operations on basic Python data structures.
 # write a function that returns a list containig the first and the last element
 # of "the_list". 
 def first_and_last(the_list):
-    return []
+    lst = []
+    lst.append(the_list[0])
+    lst.append(the_list[-1])
+    return lst
 
 
 # write a function that returns part of "the_list" between indices given by the
@@ -18,14 +21,25 @@ def first_and_last(the_list):
 # If "end" is greater then "beginning" or any og the indices is out of the
 # list, raise a "ValueError" exception. 
 def part_reverse(the_list, beginning, end):
-    return # hint this is incomplete
-
+    if end > len(the_list) or beginning < -len(the_list):
+        raise ValueError("Give an index in the list")
+    else:
+        new_list = the_list[beginning:end]
+        reversed_list = []
+        for i in range(len(new_list)):
+            reversed_list.append(new_list[(i+1)*-1])
+        return reversed_list
 
 # write a function that at the "index" of "the_list" inserts three times the
 # same value. For example if the_list = [0,1,2,3,4] and index = 3 the function
 # will return [0,1,2,3,3,3,4]. 
 def repeat_at_index(the_list, index):
-    return
+    new_list = []
+    new_list += the_list[:index]
+    for i in range(3):
+        new_list.append(the_list[index])
+    new_list += the_list[index+1:]
+    return new_list
 
 
 # Strings
@@ -33,13 +47,18 @@ def repeat_at_index(the_list, index):
 # write a function that checks whether the word is a palindrome, i.e. it reads
 # the same forward and backwards
 def palindrome_word(word):
-    return
+    lword = word.lower()
+    bword = ''
+    for i in range(-1,-len(lword)-1,-1):
+        bword += lword[i]
+    return lword == bword
 
 # write a function that checks whether the sentence is a palindrome, i.e. it
 # read the same forward and backward. Ignore all spaces and other characters
 # like fullstops, commas, etc. Also do not consider whether the letter is
 # capital or not. 
 def palindrome_sentence(sentence):
+    lsentence = sentence.lower()
     return
 
 # write a function that concatenates two sentences. First the function checks
