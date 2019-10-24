@@ -127,8 +127,8 @@ class TestSum(unittest.TestCase):
         '''
         Test
         '''
-        result = st.merge_dictionaries({"a": 1, "c": 3}, {"b:" 2, "d": 4})
-        self.assertEqual(result, {"a": 1, "c": 3, "b:" 2, "d": 4})
+        result = st.merge_dictionaries({"a": 1, "c": 3}, {"b": 2, "d": 4})
+        self.assertEqual(result, {"a": 1, "c": 3, "b": 2, "d": 4})
 
 
 

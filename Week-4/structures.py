@@ -59,7 +59,14 @@ def palindrome_word(word):
 # capital or not. 
 def palindrome_sentence(sentence):
     lsentence = sentence.lower()
-    return
+    lst = []
+    for letter in lsentence:
+        if letter == ' ' or letter == '.' or letter == ',':
+            continue
+        else:
+            lst.append(letter)
+    rlst = lst[::-1]
+    return lst == rlst
 
 # write a function that concatenates two sentences. First the function checks
 # whether the sentence meets the following criteria: it starts with a capital
@@ -68,8 +75,35 @@ def palindrome_sentence(sentence):
 # the end.  The concatenated sentence must have no white space at the beginning
 # or at the end and the must be exactly one space after the end of the first
 # sentence. 
-def concatenate_sentences(sentenece1, sentence2):
-    return
+def concatenate_sentences(sentence1, sentence2):
+    sen1 = sentence1
+    sen2 = sentence2
+    final_sen = ''
+    while sen1[0] == ' ':
+        sen1 = sen1.replace(' ','',1)
+    sen1 = sen1[::-1]
+    while sen1[0] == ' ':
+        sen1 = sen1.replace(' ','',1)
+    sen1 = sen1[::-1]
+
+    while sen2[0] == ' ':
+        sen2 = sen2.replace(' ','',1)
+    sen2 = sen2[::-1]
+    while sen2[0] == ' ':
+        sen2 = sen2.replace(' ','',1)
+    sen2 = sen2[::-1]
+
+    if sen1[0].isupper() and sen2[0].isupper():
+        if sen1[-1] == '.' or sen1[-1] == '?' or sen1[-1] == '!':
+            if sen2[-1] == '.' or sen2[-1] == '?' or sen2[-1] == '!':
+                final_sen = sen1 + ' ' + sen2
+                return final_sen
+            else:
+                raise ValueError('End sentence 2 with . or ? or !')
+        else:
+            raise ValueError('End sentence 1 with . or ? or !')
+    else: 
+        raise ValueError('Use uppercase for first letter')
 
 
 # Dictionaries
@@ -77,14 +111,27 @@ def concatenate_sentences(sentenece1, sentence2):
 # write a function that checks whether there is a record with given key in the
 # dictionary. Return True or False.
 def index_exists(dictionary, key):
-    return
+    for keyy in dictionary.keys():
+        if keyy == key:
+            return True
+        else:
+            continue
+    return False
 
 # write a function which checks whether given value is stored in the
 # dictionary. Return True or False.
 def value_exists(dictionary, value):
-    return
+    for valuee in dictionary.values():
+        if valuee == value:
+            return True
+        else:
+            continue
+    return False
 
 # write a function that returns a new dictionary which contains all the values
 # from dictionary1 and dictionary2.
 def merge_dictionaries(dictionary1, dictionary2):
-    return
+    dict1 = dictionary1
+    for key,value in dictionary2.items():
+        dict1[key] = value
+    return dict1
