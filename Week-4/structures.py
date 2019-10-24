@@ -9,6 +9,7 @@ Simple functions performing operations on basic Python data structures.
 # write a function that returns a list containig the first and the last element
 # of "the_list". 
 def first_and_last(the_list):
+    '''Gives the first and last items in a list.'''
     lst = []
     lst.append(the_list[0])
     lst.append(the_list[-1])
@@ -21,6 +22,7 @@ def first_and_last(the_list):
 # If "end" is greater then "beginning" or any og the indices is out of the
 # list, raise a "ValueError" exception. 
 def part_reverse(the_list, beginning, end):
+    '''Returns part of the_list between indices in reverse order, inclusive of beginning but exclusive of end.'''
     if end > len(the_list) or beginning < -len(the_list):
         raise ValueError("Give an index in the list")
     else:
@@ -34,6 +36,7 @@ def part_reverse(the_list, beginning, end):
 # same value. For example if the_list = [0,1,2,3,4] and index = 3 the function
 # will return [0,1,2,3,3,3,4]. 
 def repeat_at_index(the_list, index):
+    '''Repeats the index given in the_list 3 times.'''
     new_list = []
     new_list += the_list[:index]
     for i in range(3):
@@ -47,6 +50,7 @@ def repeat_at_index(the_list, index):
 # write a function that checks whether the word is a palindrome, i.e. it reads
 # the same forward and backwards
 def palindrome_word(word):
+    '''Checks whether a word is a palindrome.'''
     lword = word.lower()
     bword = ''
     for i in range(-1,-len(lword)-1,-1):
@@ -58,6 +62,7 @@ def palindrome_word(word):
 # like fullstops, commas, etc. Also do not consider whether the letter is
 # capital or not. 
 def palindrome_sentence(sentence):
+    '''Checks whether a sentence is a palindrome while ignoring spaces, fullstops and commas.'''
     lsentence = sentence.lower()
     lst = []
     for letter in lsentence:
@@ -76,6 +81,7 @@ def palindrome_sentence(sentence):
 # or at the end and the must be exactly one space after the end of the first
 # sentence. 
 def concatenate_sentences(sentence1, sentence2):
+    '''Combines two sentences like a normal english essay, sentences must be capped at the start and end with a fullstop'''
     sen1 = sentence1
     sen2 = sentence2
     final_sen = ''
@@ -111,6 +117,7 @@ def concatenate_sentences(sentence1, sentence2):
 # write a function that checks whether there is a record with given key in the
 # dictionary. Return True or False.
 def index_exists(dictionary, key):
+    '''Checks whether a certain key is in a dictionary'''
     for keyy in dictionary.keys():
         if keyy == key:
             return True
@@ -121,6 +128,7 @@ def index_exists(dictionary, key):
 # write a function which checks whether given value is stored in the
 # dictionary. Return True or False.
 def value_exists(dictionary, value):
+    '''Checks whether a certain value is in a dictionary'''
     for valuee in dictionary.values():
         if valuee == value:
             return True
@@ -131,6 +139,7 @@ def value_exists(dictionary, value):
 # write a function that returns a new dictionary which contains all the values
 # from dictionary1 and dictionary2.
 def merge_dictionaries(dictionary1, dictionary2):
+    '''Combines two dictionaries'''
     dict1 = dictionary1
     for key,value in dictionary2.items():
         dict1[key] = value
