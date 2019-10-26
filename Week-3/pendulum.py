@@ -5,8 +5,7 @@ def period(leng, gra):
     try:
         if gra == 0:
             raise ValueError("You can't divide by zero bruh")
-        tim = math.pi*2*(leng/gra)**0.5
-        return tim
+        return math.pi*2*(leng/gra)**0.5
     except TypeError:
         raise TypeError("Please enter a number")
     except NameError:
